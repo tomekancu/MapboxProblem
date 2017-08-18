@@ -3,12 +3,16 @@ package com.lastengineer.mapboxhidetest;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.constants.Style;
+import com.mapbox.mapboxsdk.maps.MapboxMapOptions;
+import com.mapbox.mapboxsdk.maps.SupportMapFragment;
 
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -16,8 +20,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private BottomNavigationView bottomNavigationView;
     private FragmentManager fragmentManager;
 
-    private MapViewFragment mapViewFragmentOne;
-    private MapViewFragment mapViewFragmentTwo;
+    private Fragment mapViewFragmentOne;
+    private Fragment mapViewFragmentTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +32,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         fragmentManager = getSupportFragmentManager();
         initBottomNavigation();
-
-
     }
 
     private void initBottomNavigation() {
-        mapViewFragmentOne = MapViewFragment.newInstance(R.layout.fragment_map_view);
-        mapViewFragmentTwo = MapViewFragment.newInstance(R.layout.fragment_map_view_two);
-
+        mapViewFragmentOne = SupportMapFragment.newInstance(new MapboxMapOptions().styleUrl(Style.DARK));
+        mapViewFragmentTwo = SupportMapFragment.newInstance(new MapboxMapOptions().styleUrl(Style.LIGHT));
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         showMapTabOne();
     }
