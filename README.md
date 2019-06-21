@@ -302,7 +302,7 @@ In my sample:
 08-21 17:02:20.388 124-124/? I/DEBUG:     5de2b85c bf81f7ff ffffff55 4606b570 4614460d  
 ```
 
-In your Mapbox Demo app: 
+Mapbox Demo app: 
 ```
 08-21 17:06:54.255 3984-3984/com.mapbox.mapboxandroiddemo A/libc: Fatal signal 11 (SIGSEGV) at 0x00000230 (code=1), thread 3984 (pboxandroiddemo)
 08-21 17:06:54.355 124-124/? I/DEBUG: *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
