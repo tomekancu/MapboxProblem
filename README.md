@@ -3,8 +3,8 @@
 Source code for problem with fragments containing MapView
 
 **Platform:** Android API 17
+
 **Mapbox SDK version:** com.mapbox.mapboxsdk:mapbox-android-sdk:5.1.2@aar
-**Sample Code:** https://github.com/tomekancu/MapboxProblem
 
 App crash, when android deconstructs map resources. So this is happening, when:
 - Replace fragment with map with another one
